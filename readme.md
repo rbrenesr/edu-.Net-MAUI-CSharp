@@ -102,4 +102,57 @@ MainPage = navigationPage;
 ```
 
 
+# Seccion 4 - Layouts
+
+Diferentes tipos de layouts
+
+![Layouts](assets/layouts01.png)
+
+
+### StackLayout
+
+- Organiza los elementos en uan pila unidireccional ya sea verticar u horizontalmente.
+- Se organiza nosrmalmente para organizar una subsección de una página
+- SctackLayout == VerticalStackLayout
+
+
+### GridLayout
+
+- Definición de medidas 
+
+```
+Auto = justo el tamaño del control contenido
+valor ejmp 100 = el valor de unidades especificado
+* = Todo el espacio disponible
+.4* = aplicado de manera porcentual
+```
+
+```
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridLayoutDemo.GridLayoutDemo"
+             Title="GridLayoutDemo">
+    <!--<Grid Background="Aqua" RowSpacing="10">-->
+        <Grid RowDefinitions=".2*, .8*" ColumnDefinitions="30,*" Background="Aqua" RowSpacing="10">
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".9*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>-->
+
+        <Button  HeightRequest="200"
+            Text="Welcome to .NET MAUI!"/>
+        
+        <Button 
+            Text="Btn #2"            
+            Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>
+```
+
 # Seccion x - 
