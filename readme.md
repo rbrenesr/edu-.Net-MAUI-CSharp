@@ -155,4 +155,15 @@ valor ejmp 100 = el valor de unidades especificado
 </ContentPage>
 ```
 
+# Seccion 5 - Controls
+
+- Controles de presentación
+- Controles que inician comandos
+- Establecer valores
+- Edición de texto
+- Indicar actividad
+- Desplegar colecciones
+
+Repo File project: 04-Controles
+
 # Seccion x - 
