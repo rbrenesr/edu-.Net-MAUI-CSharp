@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColorMaker.MainPage">
+
+
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#ab3527</Color>
+        <Color x:Key="Secondary">#775752</Color>
+        <Color x:Key="Tertiary">#705c2e</Color>
+    </ContentPage.Resources>
+
+
+
+    <Grid x:Name="Container"
+          BackgroundColor="Black"
+          ColumnDefinitions="1*"
+          RowDefinitions=".7*, .3*">
+
+        <Frame Margin="10,0,10,0"
+               VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15"
+                                 VerticalOptions="Center">
+
+
+
+                <Label Text="Welcome to .NET MAUI!"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+            
+
+
+
+            <Label FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       Text="Color Maker" />
+                
+                
+                <Label Text="Red Value:" />
+                <Slider x:Name="sldRed"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="Slider_ValueChanged" />
+                <Label Text="Green Value:" />
+                <Slider x:Name="sldGreen"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="Slider_ValueChanged" />
+                <Label Text="Blue Value:" />
+                <Slider x:Name="sldBlue"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="Slider_ValueChanged" />
+                <Frame CornerRadius="25"
+                       HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label x:Name="lblHex"
+                               HorizontalTextAlignment="End"
+                               Text="HEX Value: #000000"
+                               VerticalOptions="Center" />
+                        <ImageButton Margin="10,0,0,0"
+                                     HeightRequest="25"
+                                     Source="copy.svg"
+                                     VerticalOptions="Center"
+                                     WidthRequest="25"
+                                     Clicked="ImageButton_Clicked" />
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button x:Name="btnRandom"
+                        BackgroundColor="{StaticResource Primary}"
+                        Text="Generate Random Color"
+                        Clicked="btnRandom_Clicked" />
+            </VerticalStackLayout>
+        </Frame>
+
+
+        <Frame Margin="10,0,10,0"
+               VerticalOptions="Center"
+               BackgroundColor="White"
+               Grid.Row="1">
+            <VerticalStackLayout Spacing="15"
+                                 VerticalOptions="Center">
+              
+                <Label Text="rbrenesr" />
+                <Button Text="GitHub Repo"
+                        TextColor="Black"
+                        Clicked="Button_Clicked"
+                        AutomationId="OpenLinkButton" 
+                        BackgroundColor="White"
+                        BorderColor="Red"
+                        BorderWidth="2"/>
+
+
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+
+
+</ContentPage>
