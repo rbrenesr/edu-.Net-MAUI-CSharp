@@ -166,4 +166,18 @@ valor ejmp 100 = el valor de unidades especificado
 
 Repo File project: 04-Controles
 
-# Seccion x - 
+# Seccion 6 - Protecto Color Maker
+
+- Inslatar paquete CommunityToolkit.Maui
+```
+//En MauiProgram.cs se debe inyectar la dependencia
+builder.UseMauiApp<App>().UseMauiCommunityToolkit();
+```
+- Contentresources: Nos permite definir recursos globales en nuestra ContyestPage
+```
+   <ContentPage.Resources>
+       <Color x:Key="Primary">#ab3527</Color>
+       <Color x:Key="Secondary">#775752</Color>
+       <Color x:Key="Tertiary">#705c2e</Color>
+   </ContentPage.Resources>
+```

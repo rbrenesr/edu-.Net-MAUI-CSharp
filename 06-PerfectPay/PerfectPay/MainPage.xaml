@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PerfectPay.MainPage"
+             BackgroundColor="#323232">
+
+    <ContentPage.Resources>
+        <Color x:Key="SectionColor">#444444</Color>
+        <Color x:Key="LightFont">#d6d6d6</Color>
+        <Color x:Key="DarkFont">#4dd8eb</Color>
+    </ContentPage.Resources>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*" />
+            <RowDefinition Height=".7*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Frame Padding="10"
+               BackgroundColor="{ StaticResource SectionColor }"
+               BorderColor="Transparent">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="1"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".1*"></RowDefinition>
+                    <RowDefinition Height=".9*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Grid.ColumnSpan="3"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource DarkFont}"
+                       Text="TOTAL P/PERSONA" />
+
+                <Label Grid.Row="1"
+                       FontAttributes="Bold"
+                       FontSize="35"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource LightFont}"
+                       VerticalOptions="CenterAndExpand"
+                       Text="$ 0.00" />
+
+
+                <!--
+                TODO: La opcion VerticalOptions="Center" en esta version de aplicación no mustra el BoxView
+                <BoxView Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" VerticalOptions="Center" Color="#adadad"/>-->
+                <BoxView Grid.Row="1"
+                         Grid.Column="1"
+                         Margin="0,10,0,0"
+                         Color="#adadad" />
+
+                <VerticalStackLayout Grid.Row="1"
+                                     Grid.Column="2"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center">
+                    <Label TextColor="{StaticResource LightFont}"
+                           Text="SUBTOTAL"></Label>
+                    <Label x:Name="lblSubtotal"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource LightFont}"
+                           Text="$ 0.00"></Label>
+
+                    <Label Margin="0,10,0,0"
+                           TextColor="{StaticResource LightFont}"
+                           Text="TIP"></Label>                     
+                    <Label x:Name="lblTipByPerson"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource LightFont}"
+                           Text="$ 0.00"></Label>
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+        </Frame>
+
+    </Grid>
+
+</ContentPage>
