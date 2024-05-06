@@ -173,7 +173,11 @@ Repo File project: 04-Controles
 //En MauiProgram.cs se debe inyectar la dependencia
 builder.UseMauiApp<App>().UseMauiCommunityToolkit();
 ```
-- Contentresources: Nos permite definir recursos globales en nuestra ContyestPage
+- ContentResources: Nos permite definir recursos globales en nuestra 
+ContyestPage
+
+
+
 ```
    <ContentPage.Resources>
        <Color x:Key="Primary">#ab3527</Color>
@@ -181,3 +185,4 @@ builder.UseMauiApp<App>().UseMauiCommunityToolkit();
        <Color x:Key="Tertiary">#705c2e</Color>
    </ContentPage.Resources>
 ```
+

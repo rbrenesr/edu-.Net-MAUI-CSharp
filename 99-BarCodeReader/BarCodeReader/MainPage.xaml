@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             x:Class="BarCodeReader.MainPage"
+             BackgroundColor="#fff">
+
+
+    <ContentPage.Resources>
+        <Color x:Key="SectionColor">#444444</Color>
+        <Color x:Key="LightFont">#d6d6d6</Color>
+        <Color x:Key="DarkFont">#4dd8eb</Color>
+    </ContentPage.Resources>
+
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*" />
+            <RowDefinition Height=".7*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Frame Padding="10"
+               BackgroundColor="{ StaticResource SectionColor }"
+               BorderColor="Transparent">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+             
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".1*"></RowDefinition>
+                    <RowDefinition Height=".9*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label 
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource DarkFont}"
+                       Text="Lectro de códigos de barra" />
+
+             
+                <VerticalStackLayout Grid.Row="1"                                     
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center">
+ 
+
+                    <Editor x:Name="EditorCodBar" AutoSize="TextChanges" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+        </Frame>
+
+        <zxing:CameraBarcodeReaderView x:Name="barCodeReader" Grid.Row="1"
+                                       BarcodesDetected="CameraBarcodeReaderView_BarcodesDetected"
+                                       AnchorX="10"
+                                       AnchorY="10" />
+
+
+
+    </Grid>
+
+</ContentPage>
