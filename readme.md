@@ -186,3 +186,87 @@ ContyestPage
    </ContentPage.Resources>
 ```
 
+# Seccion 7 - Proyecto Perfect Pay
+
+En este proyecto, se tiene como objetivo cálcular la cuenta a pagar en partes iguales según la cantidad de personas que escojamos.
+
+![PerfectPay](assets/perfectpay.png)
+
+
+# Seccion 8 - Trabajando con recursos externos
+
+## Imágenes
+
+El path para colocar las imagenes es ..\Resources\Images\
+
+MAUI Acepta varios tiempos de imágenes, como los más comunes {jpg, png, gif, ...}
+
+```
+//La extensión de la imagen no es necesaria, siempre y cuando solo un archivo con el misno nombre existA.
+  <Image Source="automovil"></Image>
+  <Image Source="automovil.jpg"></Image>
+```
+
+
+Para el caso de las imagenes gif, se debe indicar / configurar IsAnimationPlaying
+
+```
+<Image Source="gif.gif" IsAnimationPlaying="True"></Image>
+```
+
+Para el caso de las imagenes svg, es necesario configurar y establecer un tamaño base, para que el framework tome este valor como referencia y realice el ajuste correspondiente.
+
+```
+<Image Source="svg.svg"></Image>
+```
+
+Para esto, se debe dar doble clic en el proyecto ( propiedades del proyecto)
+
+```
+//BaseSize
+
+<!-- Images -->
+<MauiImage Include="Resources\Images\*" />
+<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+<MauiImage Update="Resources\Images\svg.svg" Resize="True" BaseSize="300,185" />
+```
+Además puede modificarse le color de la imagen usando la propiedad TintColor
+
+```
+<MauiImage Update="Resources\Images\svg.svg" Resize="True" BaseSize="800,800" TintColor="DarkRed" />
+```
+
+
+## Tipografías
+
+El path para colocar las imagenes es ..\Resources\Fonts\
+
+
+``` https://fontello.com/ ```
+
+ ```
+ <Image>
+     <Image.Source>
+         <FontImageSource FontFamily="Iconos"
+                          Glyph="&#xF0E0;" Size="50">
+             
+         </FontImageSource>
+     </Image.Source>
+ </Image>
+```
+
+
+Agregar las fuentes en MauiProgram
+
+
+```
+ builder
+     .UseMauiApp<App>()
+     .ConfigureFonts(fonts =>
+     {
+         fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+         fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+         fonts.AddFont("PoetsenOne-Regular.ttf", "Myfont");
+         fonts.AddFont("fontello.ttf", "Iconos");
+     });
+```

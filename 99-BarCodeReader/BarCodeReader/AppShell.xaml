@@ -8,7 +8,7 @@
     Title="BarCodeReader">
 
     <ShellContent
-        Title="Home"
+        Title="Tóma Física"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

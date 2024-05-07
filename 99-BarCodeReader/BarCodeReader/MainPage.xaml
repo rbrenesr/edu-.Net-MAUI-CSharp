@@ -15,21 +15,30 @@
 
     <Grid Margin="15">
         <Grid.RowDefinitions>
-            <RowDefinition Height=".3*" />
-            <RowDefinition Height=".7*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".6*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
+        <zxing:CameraBarcodeReaderView x:Name="barCodeReader"
+                                      
+                                       BarcodesDetected="CameraBarcodeReaderView_BarcodesDetected"
+                                       AnchorX="100"
+                                       AnchorY="100"
+                                       BackgroundColor="DarkBlue"
+                                       Margin="3"
+                                       />
+
         <Frame Padding="10"
+               Grid.Row="1"
                BackgroundColor="{ StaticResource SectionColor }"
                BorderColor="Transparent">
 
-            <Grid>
+            <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
-             
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".1*"></RowDefinition>
@@ -40,15 +49,26 @@
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        TextColor="{StaticResource DarkFont}"
-                       Text="Lectro de códigos de barra" />
+                       Text="Lectro de códigos de barra"/>
 
              
-                <VerticalStackLayout Grid.Row="1"                                     
-                                     VerticalOptions="Center"
-                                     HorizontalOptions="Center">
- 
+                <VerticalStackLayout Grid.Row="1"                                    
+                      
+                                     Spacing="10">
 
+
+
+                    <Button Text="Scanning..." IsEnabled="False" Clicked="Button_Clicked" x:Name="btnScan"></Button>
+                    <Button Text="Clear" x:Name="btnClear" Clicked="btnClear_Clicked"></Button>
+                    
+                    
                     <Editor x:Name="EditorCodBar" AutoSize="TextChanges" />
+
+
+                    <Button Text="rbrenesr GitHub Repo"
+                            x:Name="btnRepo"
+                            Clicked="btnRepo_Clicked"
+                            VerticalOptions="CenterAndExpand" />
 
                 </VerticalStackLayout>
 
@@ -56,10 +76,7 @@
 
         </Frame>
 
-        <zxing:CameraBarcodeReaderView x:Name="barCodeReader" Grid.Row="1"
-                                       BarcodesDetected="CameraBarcodeReaderView_BarcodesDetected"
-                                       AnchorX="10"
-                                       AnchorY="10" />
+       
 
 
 
