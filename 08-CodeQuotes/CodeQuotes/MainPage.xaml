@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CodeQuotes.MainPage">
+
+
+    <Grid x:Name="GridBackground" BackgroundColor="Navy">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0"
+                                 EndPoint="0,1">
+
+                <GradientStopCollection>
+                    <GradientStop Color="DarkBlue" Offset="0" />
+                    <GradientStop Color="Green" Offset=".5" />
+                    <GradientStop Color="Gray" Offset="1" />
+                </GradientStopCollection>
+            </LinearGradientBrush>
+
+        </Grid.Background>
+        
+        
+        
+        
+        
+        <Grid Margin="25"
+              RowDefinitions=".8*, .2*">
+            <Label Text="Code Quotes"
+                   FontSize="50"
+                   FontFamily="MyFont"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   x:Name="lblQuote"/>
+            <Button Grid.Row="1"                    
+                    BackgroundColor="Black"
+                    FontFamily="MyFont"
+                    FontSize="25"
+                    Text="Get Quote"
+                    Opacity=".4" 
+                    x:Name="btnGenerateQuote"
+                    Clicked="btnGenerateQuote_Clicked"/>
+        </Grid>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,24 @@
+﻿"La programación es una habilidad de por vida en más de un sentido." - Erik Dietrich
+"Un programador es un alquimista que toma café y convierte código en software." - Unknown
+"En el corazón de la gran ingeniería de software se encuentra una simplicidad sublime. La verdadera innovación revela tu verdadero ingenio." - Ryan Freckleton
+"Me encanta no dormir porque los mejores problemas ocurren cuando todos duermen." - James Hague
+"El software es como la entropía. Es difícil de mantener, y tiende a descomponerse con el tiempo." - Chris Wenham
+"Un buen programador es alguien que siempre lanza la puerta de la nevera en lugar de abrir los cajones." - Paul Graham
+"Los ordenadores son buenos siguiendo instrucciones, pero no leyendo tu mente." - Donald Knuth
+"Si la depuración es el proceso de eliminar errores, entonces la programación debe ser el proceso de crearlos." - Edsger Dijkstra
+"En teoría, no hay diferencia entre teoría y práctica. Pero en la práctica, sí la hay." - Jan L. A. van de Snepscheut
+"Siempre programamos como si el mantenimiento fuera el único objetivo. Y luego nos sorprendemos de que la comprensión del sistema sea tan difícil." - Gerald Weinberg
+"Las herramientas de desarrollo más poderosas son las que no sabemos que necesitamos hasta que ya las tenemos." - James Maguire
+"El código nunca miente, los comentarios a veces lo hacen." - Ron Jeffries
+"Los buenos programadores escriben código, los grandes reutilizan código." - Bill Gates
+"Los programas de software son como obras de arte: es mejor dejar que otros los juzguen que hacerlo tú mismo." - Linus Torvalds
+"Me gustaría cambiar el mundo, pero no me dan el código fuente." - Unknown
+"La programación es como el sexo: uno podría hacerlo solo por dinero, pero resulta mucho más divertido cuando se comparte." - Linus Torvalds
+"La mejor forma de predecir el futuro es implementarlo." - Alan Kay
+"Un buen programador puede encontrar rápidamente una solución a un problema. Un gran programador encuentra una solución que nadie más puede." - Unknown
+"El código bien escrito es un arte; el código bien probado es una ciencia; el código bien documentado es una necesidad." - Unknown
+"Lo complicado no es escribir código, lo complicado es escribir código que no falle." - Unknown
+"El software es como la sexualidad: es mejor cuando es gratuito." - Linus Torvalds
+"No importa cuántas veces se pruebe el software, siempre habrá algunos errores que pasaron desapercibidos." - Marc Donner
+"La informática es más arte que ciencia. Las computadoras hacen el trabajo más fácil, pero la ciencia computacional es una disciplina bastante técnica." - Donald Knuth
+"La mejor manera de aprender a programar es escribiendo código." - John Resig

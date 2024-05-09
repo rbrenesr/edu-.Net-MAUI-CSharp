@@ -270,3 +270,45 @@ Agregar las fuentes en MauiProgram
          fonts.AddFont("fontello.ttf", "Iconos");
      });
 ```
+
+
+## Otros archivos externos
+
+El path para colocar las imagenes es ..\Resources\raw\
+
+
+Podemos utilizar OnAppearing para ionvocar metodos async
+
+```
+ protected override void OnAppearing()
+ {
+     base.OnAppearing();
+
+     LoadMauiAsset();
+ }
+```
+
+# Seccion 9 - Proyecto #3 CodeQuotes
+
+-> Existen dos tipós de degradados, lineales y circulares
+
+Para aplicar degradado, lo accesos accediendo a la propiedad Background de la grilla, en fin de varios elementos como un frame
+
+Posiciones para cada esquina:  
+0,0-1,0  
+0,1-1,1
+
+
+```
+<Grid BackgroundColor="Navy">
+    <Grid.Background>
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1">
+
+            <GradientStopCollection>
+                <GradientStop Color="DarkBlue" Offset="0" />
+                <GradientStop Color="DarkBlue" Offset="0" />
+            </GradientStopCollection>
+        </LinearGradientBrush>
+```
+
