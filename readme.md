@@ -312,3 +312,143 @@ Posiciones para cada esquina:
         </LinearGradientBrush>
 ```
 
+
+# Seccion 9 - Data bindings
+
+Nos permite enlazar atriburtos o valores de un objerto a un control de la UI de forma bidireccional
+
+Binding desde c#
+```
+  Binding persopnaBinding = new Binding(); //Crear objeto binding
+  persopnaBinding.Source = persona; //Crear la fuente u origen
+  persopnaBinding.Path = "Nombre"; // Establecer la propiedad 
+  lblNombre.SetBinding(Label.TextProperty, persopnaBinding); // Asociar el enlace
+```
+
+Binding desde XAML
+
+1. Se debe especificar el espacio de nombres de Models como una opción en ContentPage xmlns
+
+```
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBindingDemo.MainPage"
+             xmlns:Models="clr-namespace:DataBindingDemo.Models">
+
+
+//Agregarlo como recurso del ContentPage
+
+    <ContentPage.Resources>
+        <Models:Persona x:Key="Persona"
+                        Nombre="Rafael"
+                        Apellido="Rivera"
+                        Edad="30"                        
+                        />
+    </ContentPage.Resources>
+
+
+      <Label x:Name="lblApellido"
+         Text="{Binding Apellido, Source={StaticResource persona}}"
+         FontSize="Large"
+         HorizontalOptions="Center" />
+
+```
+
+
+## Bindins Context
+
+Desde C#  
+
+```
+    lblApellido.BindingContext = persona;
+    lblApellido.SetBinding(Label.TextProperty, "Apellido");
+```
+
+La forma de hacerlo globla es:
+
+```
+    BindingContext = persona;
+
+
+    //En XAML
+
+        <Label x:Name="lblApellido"
+           Text="{Binding Apellido}"
+           FontSize="Large"
+           HorizontalOptions="Center" />
+
+```
+
+## Bindigs entre controles
+
+
+Utilizando  Binding Source={x:Reference slider}, Path=Value  
+
+```
+ <Label 
+     Text="Welcome to .NET MAUI!" Rotation="{Binding Source={x:Reference slider}, Path=Value }"
+      />
+
+ <Slider Minimum="0" Maximum="360" x:Name="slider"></Slider>
+```
+
+## INotifyPropertyChanged
+
+Se utiliza para notificar a las propiedasdes de los controles de la UI que un Sources cambió.
+
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataBindingDemo.Models
+{
+    public class Persona : INotifyPropertyChanged
+    {
+        private string nombre;
+        private int edad;
+        private string direccion;
+
+        //nerera atributos pasra la calse
+        public string Nombre
+        {
+            get => nombre; set
+            {
+                nombre = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Apellido { get; set; }
+        public int Edad
+        {
+            get => edad; set
+            {
+                edad = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Direccion
+        {
+            get => direccion; set
+            {
+                direccion = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Telefono { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
+
+```
