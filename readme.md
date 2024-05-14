@@ -452,3 +452,15 @@ namespace DataBindingDemo.Models
 }
 
 ```
+
+
+# Seccion 12 - El patrón MVVM
+
+El objetivo de este modelo de trabajo es sepaerar de forma ordenada el código en campas 
+
+- Views
+- ViewModels
+- Models
+
+
+![MVVM](assets/mvvmModel.png)
