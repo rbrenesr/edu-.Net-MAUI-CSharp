@@ -464,3 +464,5 @@ El objetivo de este modelo de trabajo es sepaerar de forma ordenada el código e
 
 
 ![MVVM](assets/mvvmModel.png)
+
+
