@@ -3,7 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NavigationDemo.MVVM.Pages.StartPage"
              Title="StartPage">
+
+    <NavigationPage.TitleView>
+        <Frame Margin="10" Padding="0" CornerRadius="0">
+            <SearchBar Placeholder="Buscar elemento"></SearchBar>
+        </Frame>
+    </NavigationPage.TitleView>
+    
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <!--<Entry x:Name="txtName" Placeholder="Nombre"></Entry>-->
+        <Entry Text="{Binding Name}"></Entry>
         <Button Text="Go to page 2" Clicked="Button_Clicked"></Button>
     </StackLayout>
 </ContentPage>

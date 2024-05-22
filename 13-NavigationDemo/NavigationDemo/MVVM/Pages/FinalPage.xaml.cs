@@ -1,3 +1,5 @@
+using NavigationDemo.Utilities;
+
 namespace NavigationDemo.MVVM.Pages;
 
 public partial class FinalPage : ContentPage
@@ -18,6 +20,7 @@ public partial class FinalPage : ContentPage
 
     private void Button_Clicked_1(object sender, EventArgs e)
     {
-        Navigation.PopToRootAsync();
+        //Navigation.PopToRootAsync();
+        NavUtilities.InsertPage(Navigation);
     }
 }

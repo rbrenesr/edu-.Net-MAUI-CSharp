@@ -63,6 +63,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="MVVM\Pages\CoolPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Pages\FinalPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

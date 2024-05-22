@@ -5,6 +5,9 @@
              Title="Page2">
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
+
+        <!--<Entry x:Name="txtName"></Entry>-->
+        <Entry Text="{Binding Name}"></Entry>
         <Button Text="Go to page 3" Clicked="Button_Clicked"></Button>
         <Button Text="Go to start page" Clicked="Button_Clicked_1"></Button>
     </StackLayout>
