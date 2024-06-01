@@ -463,6 +463,12 @@ El objetivo de este modelo de trabajo es sepaerar de forma ordenada el código e
 - Models
 
 
-![MVVM](assets/mvvmModel.png)
+![MVVM](assets/mvvmModel.png)  
 
+
+
+
+# Sesión 16 Estilos en .NET MAUI
+
+## Estilos Implícitos
 
