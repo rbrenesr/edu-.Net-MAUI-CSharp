@@ -3,32 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StylesDemo.MainPage">
 
-    <ContentPage.Resources>
-
-       
-
-    </ContentPage.Resources>
-
     <ScrollView>
-
-        <ScrollView.Resources>
-            <Style TargetType="VerticalStackLayout"></Style>
-        </ScrollView.Resources>
-        
         <VerticalStackLayout>
-
-            <Button Text="LOGIN" BackgroundColor="Aqua"></Button>
-            <Button Text="VISIT WEB SITE">
-                <Button.Resources>
-                    <Style TargetType="Button">
-                        <Setter Property="BackgroundColor"
-                                Value="Blue"></Setter>
-                    </Style>
-                </Button.Resources>
-            </Button>
-
-            <Button Text="LOGIN" Style="{StaticResource buttonStyle}"></Button>
-
+            <Button Text="LOGIN"></Button>
+            <Button Text="VISIT WEB SITE"></Button>
+            <Button Text="LOGIN"></Button>
         </VerticalStackLayout>
     </ScrollView>
 

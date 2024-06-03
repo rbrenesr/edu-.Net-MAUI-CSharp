@@ -4,51 +4,37 @@
              xmlns:local="clr-namespace:StylesDemo"
              x:Class="StylesDemo.App">
     <Application.Resources>
-        <Color x:Key="bgColor">#db3a34</Color>
-        <Color x:Key="textColor">#ffc857</Color>
 
-        <Style TargetType="VerticalStackLayout">
-            <Setter Property="VerticalOptions"
-                    Value="Center" />
-            <Setter Property="Padding"
-                    Value="30,0" />
-            <Setter Property="Spacing"
-                    Value="25" />
-        </Style>
 
-        <Style TargetType="StackBase"
-               ApplyToDerivedTypes="True">
-            <Setter Property="VerticalOptions"
-                    Value="Center" />
-            <Setter Property="Padding"
-                    Value="30,0" />
-            <Setter Property="Spacing"
-                    Value="25" />
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources/Styles/ButtonStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml"></ResourceDictionary>
+                <ResourceDictionary>
+                    <!--<Style TargetType="StackBase"
+                           ApplyToDerivedTypes="True">
+                        <Setter Property="VerticalOptions"
+                                Value="Center" />
+                        <Setter Property="Padding"
+                                Value="30,0" />
+                        <Setter Property="Spacing"
+                                Value="25" />
+                    </Style>-->
 
-        <Style TargetType="Button">
-            <Setter Property="BackgroundColor"
-                    Value="{StaticResource bgColor}"></Setter>
-            <Setter Property="FontAttributes"
-                    Value="Bold"></Setter>
-            <Setter Property="FontSize"
-                    Value="Large"></Setter>
-            <Setter Property="TextColor"
-                    Value="{StaticResource textColor}"></Setter>
+                    <Style TargetType="VerticalStackLayout">
+                        <Setter Property="VerticalOptions"
+                                Value="Center" />
+                        <Setter Property="Padding"
+                                Value="30,0" />
+                        <Setter Property="Spacing"
+                                Value="25" />
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
 
-        </Style>
-
-        <Style TargetType="Button"
-               x:Key="buttonStyle">
-            <Setter Property="BackgroundColor"
-                    Value="{StaticResource bgColor}"></Setter>
-            <Setter Property="FontAttributes"
-                    Value="Bold"></Setter>
-            <Setter Property="FontSize"
-                    Value="Large"></Setter>
-            <Setter Property="TextColor"
-                    Value="Red"></Setter>
-
-        </Style>
+     
     </Application.Resources>
 </Application>
