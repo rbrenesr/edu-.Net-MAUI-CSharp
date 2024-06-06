@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--#region VerticalStackLayouts -->
+    <Style TargetType="VerticalStackLayout">
+        <Setter Property="VerticalOptions"
+                Value="CenterAndExpand" />
+        <Setter Property="Margin"
+                Value="0,0,25,0"></Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Labels -->
+    <Style Class="LabelText"
+           TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{AppThemeBinding Light={StaticResource LightText}, Dark={StaticResource DarkText}}" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="End" />
+    </Style>
+
+    <Style Class="LabelOperation"
+           TargetType="Label">
+        <Setter Property="FontFamily"
+                Value="SublimaLight" />
+        <Setter Property="FontSize"
+                Value="25" />
+    </Style>
+
+    <Style Class="LabelResult"
+           TargetType="Label">
+        <Setter Property="FontFamily"
+                Value="SublimaBold" />
+        <Setter Property="FontSize"
+                Value="50" />
+    </Style>
+
+
+    <!--#endregion-->
+
+    <!--#region BoxView -->
+    <Style TargetType="BoxView">
+        <Setter Property="Color"
+                Value="{AppThemeBinding Light={StaticResource LightPrimary}, Dark={StaticResource DarkPrimary}}"></Setter>
+        <Setter Property="CornerRadius"
+                Value="30,30,0,0"></Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Button estilo Heredado-->
+    <Style x:Key="BaseButton"
+           TargetType="Button">
+        <Setter Property="BackgroundColor"
+                Value="{AppThemeBinding Light={StaticResource LightSecundary}, Dark={StaticResource DarkSecundary}}" />
+
+        <Setter Property="FontFamily"
+                Value="SublimaLight" />
+
+        <Setter Property="FontSize"
+                Value="25" />
+
+        <Setter Property="TextColor"
+                Value="{AppThemeBinding Light={StaticResource LightText}, Dark={StaticResource DarkText}}" />
+
+    </Style>
+
+
+    <Style BasedOn="{StaticResource BaseButton}"
+           TargetType="Button"></Style>
+
+    <Style x:Key="YellowButton" BasedOn="{StaticResource BaseButton}"
+           TargetType="Button">
+        <Setter Property="TextColor"
+                Value="{StaticResource YellowColor}" />
+    </Style>
+
+
+    <Style x:Key="RedButton"
+           BasedOn="{StaticResource BaseButton}"
+           TargetType="Button">
+        <Setter Property="TextColor"
+                Value="{StaticResource RedColor}" />
+    </Style>
+
+    <!--#endregion-->
+
+
+</ResourceDictionary>
