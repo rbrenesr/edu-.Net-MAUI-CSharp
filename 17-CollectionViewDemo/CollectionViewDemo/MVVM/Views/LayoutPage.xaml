@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewDemo.MVVM.Views.LayoutPage"
+             Title="LayoutPage">
+
+
+
+    <Grid RowDefinitions=".1*,.9*">
+
+        <Button Text="Clear Selecctions"
+                Command="{Binding ClearCommand}"></Button>
+
+        <!--ItemsLayout="HorizontalList"-->
+
+        <!--<CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="3"></GridItemsLayout>
+        </CollectionView.ItemsLayout>-->
+
+
+        <!--SelectionMode="Multiple"-->
+        <CollectionView ItemsSource="{Binding Products}"
+                        SelectionMode="Multiple"
+                        SelectionChanged="CollectionView_SelectionChanged"
+                        SelectedItems="{Binding SelectectProducts}"
+                        SelectionChangedCommand="{Binding ProductsChangedCommand}"
+                        Grid.Row="1">
+
+
+            <!--SelectionMode="Single"-->
+            <!--<CollectionView ItemsSource="{Binding Products}"
+                        SelectionMode="Single"
+                        SelectionChanged="CollectionView_SelectionChanged"
+                        SelectedItem="{Binding SelectedProduct}"
+                        SelectionChangedCommand="{Binding ProductChangedCommand}"
+                        Grid.Row="1">-->
+
+            <CollectionView.Header>
+                <Frame BackgroundColor="{StaticResource Primary}">
+                    <Label Text="Productos"
+                           FontAttributes="Bold"
+                           TextColor="White"></Label>
+                </Frame>
+            </CollectionView.Header>
+            <CollectionView.Footer>
+                <HorizontalStackLayout>
+                    <Label FontSize="Title">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Power by:"
+                                      TextColor="{StaticResource Tertiary}"></Span>
+                                <Span Text="MAUI:"
+                                      TextColor="{StaticResource Tertiary}"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </HorizontalStackLayout>
+            </CollectionView.Footer>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"></LinearItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!--<Frame Margin="15">-->
+                    <Frame Margin="15"
+                           WidthRequest="200"
+                           HeightRequest="250">
+                        <VerticalStackLayout>
+                            <Image Source="{Binding Image}"></Image>
+                            <Label HorizontalTextAlignment="Center"
+                                   Text="{Binding Name}"></Label>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

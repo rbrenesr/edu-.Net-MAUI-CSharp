@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewDemo.MVVM.Views.EmptyView"
+             Title="EmptyView">
+
+
+    <ContentPage.Resources>
+        <ContentView x:Key="NoResultsView">
+            <Grid>
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Image Source="notfound.png"
+                           HeightRequest="150"
+                           VerticalOptions="Center"></Image>
+                    <Label Text="No data found!"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalTextAlignment="Center"></Label>
+                </VerticalStackLayout>
+            </Grid>
+        </ContentView>
+
+        <ContentView x:Key="ConnectivityIssue">
+            <Grid>
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Image Source="no_internet.png"
+                           HeightRequest="150"
+                           VerticalOptions="Center"></Image>
+                    <Label Text="Check your internet connection!"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalTextAlignment="Center"></Label>
+                </VerticalStackLayout>
+            </Grid>
+        </ContentView>
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions=".2*, .8*">
+
+        <HorizontalStackLayout>
+            <Label Text="Toogle EmptyViews"></Label>
+            <Switch Toggled="Switch_Toggled"></Switch>
+        </HorizontalStackLayout>
+
+
+        <!--<CollectionView EmptyView="No data found!">-->
+        <CollectionView Grid.Row="1"
+                        x:Name="CollectionView">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <!--<x:String>Item 1</x:String>
+                <x:String>Item 2</x:String>
+                <x:String>Item 3</x:String>
+                <x:String>Item 4</x:String>
+                <x:String>Item 5</x:String>
+                <x:String>Item 6</x:String>-->
+                </x:Array>
+            </CollectionView.ItemsSource>
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>
