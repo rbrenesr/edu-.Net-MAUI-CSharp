@@ -9,7 +9,6 @@
         <converters:ColorConverter x:Key="ColorConverter" />
     </ContentPage.Resources>
 
-
     <Grid Margin="15"
           RowDefinitions=".1*,.3*,.7*">
         <Label StyleClass="DarkBlue, Header"
@@ -51,7 +50,8 @@
                    Text="PENDING TASKS"></Label>
 
             <CollectionView Grid.Row="1"
-                            ItemsSource="{Binding Tasks}">
+                            ItemsSource="{Binding Tasks}"
+                            ItemsUpdatingScrollMode="KeepLastItemInView">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame BorderColor="Transparent">
@@ -78,6 +78,10 @@
             </CollectionView>
 
         </Grid>
+        <Button Grid.Row="2"
+                Text="+"
+                Clicked="Button_Clicked"
+                Style="{StaticResource CircularButton}"></Button>
     </Grid>
     
 </ContentPage>

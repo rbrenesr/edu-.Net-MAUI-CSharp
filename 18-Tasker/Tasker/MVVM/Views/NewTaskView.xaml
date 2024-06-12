@@ -4,7 +4,37 @@
              x:Class="Tasker.MVVM.Views.NewTaskView"
              Title="Add New Task">
 
-    <Grid
-        RowDefinitions=".2*,.7*,.1*"></Grid>
-    
+    <Grid RowDefinitions=".2*,.7*,.1*">
+        <Entry Placeholder="Entry new Task"
+               Style="{StaticResource Task}" Text="{Binding Task}"></Entry>
+
+        <CollectionView Grid.Row="1"
+                        Margin="15"
+                        ItemsSource="{Binding Categories}">
+
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout HorizontalItemSpacing="5"
+                                 Orientation="Vertical" Span="2" VerticalItemSpacing="5"></GridItemsLayout>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame>
+                        <RadioButton Content="{Binding CategoryName}" GroupName="Category" IsChecked="{Binding IsSelected}"></RadioButton>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+            
+        </CollectionView>
+
+        <HorizontalStackLayout Grid.Row="2" Margin="10" HorizontalOptions="CenterAndExpand" Spacing="15" VerticalOptions="Center">
+            <Button x:Name="btnAddTask" CornerRadius="15"
+                    Text="Add Task" Clicked="btnAddTask_Clicked"></Button>
+            <Button x:Name="btnAddCategory" CornerRadius="15"
+                    Text="Add Category" Clicked="btnAddCategory_Clicked"></Button>
+        </HorizontalStackLayout>
+        
+    </Grid>
+
 </ContentPage>

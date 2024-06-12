@@ -6,28 +6,42 @@
     <Color x:Key="DarkBlue">#212B4F</Color>
     <Color x:Key="LightBlue">#8A8BA6</Color>
 
-    <Style Class="DarkBlue" TargetType="Label">
-        <Setter Property="TextColor" Value="{StaticResource DarkBlue}" />
+    <Style Class="DarkBlue"
+           TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource DarkBlue}" />
     </Style>
 
-    <Style Class="LightBlue" TargetType="Label">
-        <Setter Property="TextColor" Value="{StaticResource LightBlue}" />
+    <Style Class="LightBlue"
+           TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource LightBlue}" />
     </Style>
 
-    <Style Class="Header" TargetType="Label">
-        <Setter Property="FontAttributes" Value="Bold" />
-        <Setter Property="FontSize" Value="Title" />
-        <Setter Property="VerticalOptions" Value="Center" />
+    <Style Class="Header"
+           TargetType="Label">
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="FontSize"
+                Value="Title" />
+        <Setter Property="VerticalOptions"
+                Value="Center" />
     </Style>
 
-    <Style Class="SubHeader" TargetType="Label">
-        <Setter Property="FontSize" Value="Medium" />
-        <Setter Property="VerticalOptions" Value="Center" />
+    <Style Class="SubHeader"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="Medium" />
+        <Setter Property="VerticalOptions"
+                Value="Center" />
     </Style>
 
-    <Style Class="CardTitle" TargetType="Label">
-        <Setter Property="FontSize" Value="Medium" />
-        <Setter Property="FontAttributes" Value="Bold" />
+    <Style Class="CardTitle"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="Medium" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
     </Style>
 
     <Shadow x:Key="shadow"
@@ -40,7 +54,8 @@
         </Shadow.Offset>
     </Shadow>
 
-    <Style Class="FrameClass" TargetType="Frame">
+    <Style Class="FrameClass"
+           TargetType="Frame">
         <Setter Property="CornerRadius"
                 Value="10" />
         <Setter Property="BackgroundColor"
@@ -54,27 +69,40 @@
     </Style>
 
 
-    <Style x:Key="Task" TargetType="Entry">
-        <Setter Property="FontSize" Value="Large" />
-        <Setter Property="HorizontalTextAlignment" Value="Center" />
-        <Setter Property="PlaceholderColor" Value="{StaticResource LightBlue}" />
-        <Setter Property="VerticalOptions" Value="Center" />
+    <Style x:Key="Task"
+           TargetType="Entry">
+        <Setter Property="FontSize"
+                Value="Large" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center" />
+
+        <Setter Property="PlaceholderColor"
+                Value="{StaticResource LightBlue}" />
+        <Setter Property="VerticalOptions"
+                Value="Center" />
     </Style>
 
-    <EllipseGeometry
-        x:Key="circle"
-        Center="50,50"
-        RadiusX="30"
-        RadiusY="30"/>
+    <EllipseGeometry x:Key="circle"
+                     Center="50,50"
+                     RadiusX="30"
+                     RadiusY="30" />
 
-    <Style x:Key="CircularButton" TargetType="Button">
-        <Setter Property="FontAttributes" Value="Bold" />
-        <Setter Property="FontSize" Value="Large" />
-        <Setter Property="HeightRequest" Value="100" />
-        <Setter Property="WidthRequest" Value="100" />
-        <Setter Property="VerticalOptions" Value="End" />
-        <Setter Property="HorizontalOptions" Value="End" />
-        <Setter Property="Clip" Value="{StaticResource circle}"/>
+    <Style x:Key="CircularButton"
+           TargetType="Button">
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="FontSize"
+                Value="Large" />
+        <Setter Property="HeightRequest"
+                Value="100" />
+        <Setter Property="WidthRequest"
+                Value="100" />
+        <Setter Property="VerticalOptions"
+                Value="End" />
+        <Setter Property="HorizontalOptions"
+                Value="End" />
+        <Setter Property="Clip"
+                Value="{StaticResource circle}" />
     </Style>
 
 </ResourceDictionary>

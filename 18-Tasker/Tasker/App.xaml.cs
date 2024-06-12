@@ -8,8 +8,8 @@ namespace Tasker
         {
             InitializeComponent();
 
-            //MainPage = new MainView();
-            MainPage = new NewTaskView();
+            MainPage = new NavigationPage(new MainView());
+            //MainPage = new NewTaskView();
         }
     }
 }
