@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="Weather.MVVM.Views.WeatherView"
+             Title="WeatherView">
+
+    <Grid Margin="15"
+          RowDefinitions=".08*,.1*,.5*,.1*,.3*">
+
+        <!--#region Search -->
+        <Grid>
+            <Frame></Frame>
+            <SearchBar 
+                x:Name="searchBar"
+                Placeholder="Search"
+                       VerticalOptions="Center"
+                       SearchCommand="{Binding SearchCommand}"
+                       SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+                ></SearchBar>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region Datos País, Fecha y Animacion-->
+        <VerticalStackLayout Grid.Row="1"
+                             Style="{StaticResource MainStackLayout}">
+            <Label Text="Paris"
+                   Style="{StaticResource Title}"></Label>
+            <Label Text="July 08, 2050"></Label>
+        </VerticalStackLayout>
+
+        <skia:SKLottieView Grid.Row="2"
+                           Source="storm.json"
+                           RepeatCount="-1"></skia:SKLottieView>
+        <!--#endregion-->
+
+        <!--#region Datos del clima -->
+        <Grid Grid.Row="3"
+              ColumnDefinitions="*,*,*">
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label Text="Temp"
+                       Style="{StaticResource WeatherTitle}"></Label>
+                <Label Text="25°C"
+                       Style="{StaticResource WeatherValue}"></Label>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Spacing="10"
+                                 HorizontalOptions="Center">
+                <Label Text="Wind"
+                       Style="{StaticResource WeatherTitle}"></Label>
+                <Label Text="10Km/H"
+                       Style="{StaticResource WeatherValue}"></Label>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="2"
+                                 Spacing="10"
+                                 HorizontalOptions="Center">
+                <Label Text="Weather"
+                       Style="{StaticResource WeatherTitle}"></Label>
+                <Label Text="Sunny"
+                       Style="{StaticResource WeatherValue}"></Label>
+            </VerticalStackLayout>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region Pronostico de dias -->
+
+        <CollectionView Grid.Row="4">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Monday</x:String>
+                    <x:String>Tuesday</x:String>
+                    <x:String>Wednesday</x:String>
+                    <x:String>Thursday</x:String>
+                    <x:String>Friday</x:String>
+                    <x:String>Saturday</x:String>
+                    <x:String>Sunday</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="10"
+                                   Orientation="Horizontal"></LinearItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Style="{StaticResource card}">
+                        <VerticalStackLayout Spacing="5" VerticalOptions="Center">
+                            <skia:SKLottieView IsAnimationEnabled="False"
+                                               HeightRequest="50"
+                                               WidthRequest="50"
+                                               Source="mist.json">
+                            </skia:SKLottieView>
+                            <Label Text="08-02-2024" TextColor="{StaticResource Yellow100Accent}"></Label>
+                            <Label Text="50°C"></Label>
+                            <Label Text="Sunny"></Label>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <!--#endregion-->
+
+    </Grid>
+
+</ContentPage>
