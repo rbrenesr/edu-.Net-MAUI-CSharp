@@ -25,20 +25,33 @@
         <Grid Margin="25"
               RowDefinitions=".8*, .2*">
             <Label Text="Code Quotes"
-                   FontSize="50"
+                   FontSize="Small"
                    FontFamily="MyFont"
                    TextColor="White"
                    HorizontalTextAlignment="Center"
                    VerticalOptions="Center"
                    x:Name="lblQuote"/>
-            <Button Grid.Row="1"                    
+            <!--<Button Grid.Row="1"                    
                     BackgroundColor="Black"
                     FontFamily="MyFont"
                     FontSize="25"
                     Text="Get Quote"
-                    Opacity=".4" 
+                    Opacity=".6" 
                     x:Name="btnGenerateQuote"
-                    Clicked="btnGenerateQuote_Clicked"/>
+                    Clicked="btnGenerateQuote_Clicked"/>-->
+
+            <Button Grid.Row="1"
+                    BackgroundColor="Black"
+                    FontFamily="MyFont"
+                    FontSize="25"
+                    Text="Get Quote"
+                    Opacity=".6"
+                    x:Name="btnGenerateQuote"
+                    Clicked="btnGenerateQuote_Clicked"
+                    VerticalOptions="Center"                    
+                    Padding="10,5" />
+
+
         </Grid>
     </Grid>
 

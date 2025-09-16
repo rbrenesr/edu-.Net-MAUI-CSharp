@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExternalResourcesDemo.Fonts"
              Title="Fonts">
+    
+    
+    
     <StackLayout BackgroundColor="Black">
 
         <Image>
@@ -17,12 +20,26 @@
 
 
         <Label FontSize="50"
-               Text="Font test"
+               Text="This is a Font test"
                TextColor="White"
                FontFamily="Myfont"></Label>
         <Label FontSize="50"
                Text="Font test"
                TextColor="White"
                FontFamily="OpenSansSemibold"></Label>
+
+
+
+        <Label FontSize="50"
+               Text="Font test Rafael"
+               TextColor="White"
+               FontFamily="MyCreamer"></Label>
+        
+        
     </StackLayout>
+    
+    
+    
+    
+    
 </ContentPage>

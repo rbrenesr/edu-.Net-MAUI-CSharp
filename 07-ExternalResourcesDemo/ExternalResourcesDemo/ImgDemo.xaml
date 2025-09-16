@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExternalResourcesDemo.ImgDemo"
+             Title="ImgDemo">
+
+    <ScrollView>
+        <Grid BackgroundColor="Red"
+              RowSpacing="10"
+              Padding="25"
+              RowDefinitions="*,*,*,*,*">
+            <!--<Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>-->
+
+            <Image Source="dotnet_bot.png"
+                   Grid.Row="0" />
+            <Image Source="jpg.jpg"
+                   Grid.Row="1" />
+            <Image Source="png.png"
+                   Grid.Row="2" />
+            <Image Source="gif.gif"
+                   Grid.Row="3"
+                   IsAnimationPlaying="True" />
+            <Image Source="svg.svg"
+                   Grid.Row="4" />
+        </Grid>
+    </ScrollView>
+
+
+</ContentPage>

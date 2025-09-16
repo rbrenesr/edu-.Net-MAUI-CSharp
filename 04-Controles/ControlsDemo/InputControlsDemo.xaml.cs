@@ -9,14 +9,14 @@ public partial class InputControlsDemo : ContentPage
 
      private void slider_ValueChanged(object sender, ValueChangedEventArgs e)
      {
-		  lblSlider.Text = slider.Value.ToString();
+		  lblSlider.Text = slider.Value.ToString("N2");
 	 }
 
      private void stepper_ValueChanged(object sender, ValueChangedEventArgs e)
      {
 		  if (stepper != null)
 		  {
-			   lblSlider.Text = stepper.Value.ToString();
+			   lblSlider.Text = stepper.Value.ToString("N2");
 		  }
 	 }
 }

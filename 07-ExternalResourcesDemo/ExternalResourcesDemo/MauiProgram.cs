@@ -15,6 +15,7 @@ namespace ExternalResourcesDemo
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("PoetsenOne-Regular.ttf", "Myfont");
                     fonts.AddFont("fontello.ttf", "Iconos");
+                    fonts.AddFont("Creamer-6YdxD.ttf", "MyCreamer");
                 });
 
 #if DEBUG

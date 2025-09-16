@@ -6,6 +6,6 @@
     <StackLayout>
 
         <ActivityIndicator IsRunning="True" Color="Blue"/>
-        <ProgressBar Progress=".3"/>
+        <ProgressBar Progress=".4"/>
     </StackLayout>
 </ContentPage>

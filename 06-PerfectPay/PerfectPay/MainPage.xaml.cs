@@ -16,7 +16,14 @@ namespace PerfectPay
 
         private void txtBill_Completed(object sender, EventArgs e)
         {
-            bill = decimal.Parse(txtBill.Text);
+            //bill = decimal.Parse(txtBill.Text);
+            if (!decimal.TryParse(txtBill.Text, out bill))     
+            {
+                // Manejo del caso cuando la conversión falla (por ejemplo, mostrar un mensaje o dejar en 0)
+                bill = 0;
+            }
+
+
             CalculateTotal();
         }
 
@@ -66,7 +73,7 @@ namespace PerfectPay
             lblSubtotal.Text = $"Subtotal: {subTotal:C}";
 
             var totalByPerson = (bill + totalTip) / noPersons;
-            lblTotal.Text = $"Total: {totalByPerson:C}";
+            lblTotal.Text = $"T: {totalByPerson:C}";
         }
 
         private void Button_Clicked_1(object sender, EventArgs e)

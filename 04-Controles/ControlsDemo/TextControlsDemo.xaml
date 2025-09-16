@@ -9,11 +9,13 @@
                x:Name="txtName"
                PlaceholderColor="DarkGreen"
                IsPassword="True"
-               Keyboard="Telephone"
+               
                TextChanged="txtName_TextChanged"
                Completed="txtName_Completed">
             
         </Entry>
+        <!--Keyboard="Telephone"-->
+
 
         <Editor AutoSize="TextChanges"/>
 

@@ -17,44 +17,43 @@
           ColumnDefinitions="1*"
           RowDefinitions=".7*, .3*">
 
-        <Frame Margin="10,0,10,0"
+        <Frame Margin="15,0,15,0"
                VerticalOptions="Center">
             <VerticalStackLayout Spacing="15"
                                  VerticalOptions="Center">
 
-
-
-                <Label Text="Welcome to .NET MAUI!"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-            
-
-
-
-            <Label FontAttributes="Bold"
+                <Label FontAttributes="Bold"
                        FontSize="Large"
                        HorizontalTextAlignment="Center"
                        Text="Color Maker" />
-                
-                
+
                 <Label Text="Red Value:" />
                 <Slider x:Name="sldRed"
                         MaximumTrackColor="{StaticResource Tertiary}"
                         MinimumTrackColor="{StaticResource Secondary}"
                         ThumbColor="{StaticResource Primary}"
                         ValueChanged="Slider_ValueChanged" />
+                
+                
                 <Label Text="Green Value:" />
                 <Slider x:Name="sldGreen"
                         MaximumTrackColor="{StaticResource Tertiary}"
                         MinimumTrackColor="{StaticResource Secondary}"
                         ThumbColor="{StaticResource Primary}"
                         ValueChanged="Slider_ValueChanged" />
+                
+                
                 <Label Text="Blue Value:" />
                 <Slider x:Name="sldBlue"
                         MaximumTrackColor="{StaticResource Tertiary}"
                         MinimumTrackColor="{StaticResource Secondary}"
                         ThumbColor="{StaticResource Primary}"
                         ValueChanged="Slider_ValueChanged" />
+                
+                
+                
+                
+                
                 <Frame CornerRadius="25"
                        HorizontalOptions="Center">
                     <HorizontalStackLayout>
@@ -70,6 +69,10 @@
                                      Clicked="ImageButton_Clicked" />
                     </HorizontalStackLayout>
                 </Frame>
+                
+                
+                
+                
                 <Button x:Name="btnRandom"
                         BackgroundColor="{StaticResource Primary}"
                         Text="Generate Random Color"
@@ -84,15 +87,15 @@
                Grid.Row="1">
             <VerticalStackLayout Spacing="15"
                                  VerticalOptions="Center">
-              
+
                 <Label Text="rbrenesr" />
                 <Button Text="GitHub Repo"
                         TextColor="Black"
                         Clicked="Button_Clicked"
-                        AutomationId="OpenLinkButton" 
+                        AutomationId="OpenLinkButton"
                         BackgroundColor="White"
                         BorderColor="Red"
-                        BorderWidth="2"/>
+                        BorderWidth="2" />
 
 
             </VerticalStackLayout>

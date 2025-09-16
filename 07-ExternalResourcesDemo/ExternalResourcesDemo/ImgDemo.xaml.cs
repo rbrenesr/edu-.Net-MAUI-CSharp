@@ -1,8 +1,8 @@
 namespace ExternalResourcesDemo;
 
-public partial class Iamges : ContentPage
+public partial class ImgDemo : ContentPage
 {
-	public Iamges()
+	public ImgDemo()
 	{
 		InitializeComponent();
 	}

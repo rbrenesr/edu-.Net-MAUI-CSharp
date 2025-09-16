@@ -42,7 +42,7 @@
 
                 <Label Grid.Row="1"
                        FontAttributes="Bold"
-                       FontSize="35"
+                       FontSize="Small"
                        HorizontalTextAlignment="Center"
                        TextColor="{StaticResource LightFont}"
                        VerticalOptions="CenterAndExpand"
@@ -99,16 +99,18 @@
 
             <Label Text="Enter your bill $:"
                    TextColor="{StaticResource LightFont}"
-                   VerticalOptions="Center" />
+                   VerticalOptions="Center" 
+                   FontSize="12"/>
 
             <Entry x:Name="txtBill"
                    Grid.Column="1"
                    BackgroundColor="{StaticResource SectionColor}"
                    Keyboard="Numeric"
-                   Text="0.00"
+                   Text="0"
                    TextColor="{StaticResource LightFont}"
                    VerticalOptions="Center"
-                   Completed="txtBill_Completed" />
+                   Completed="txtBill_Completed"
+                   TextChanged="txtBill_Completed"/>
 
             <Label Grid.Row="1"
                    Text="Choose your tip"

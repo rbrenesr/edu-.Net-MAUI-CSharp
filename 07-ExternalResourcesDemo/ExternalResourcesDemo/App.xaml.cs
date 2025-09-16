@@ -6,6 +6,8 @@
         {
             InitializeComponent();
 
+            //MainPage = new ImgDemo();
+            //MainPage = new Fonts();
             MainPage = new MainPage();
         }
     }

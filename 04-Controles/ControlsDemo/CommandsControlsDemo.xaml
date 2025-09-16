@@ -9,7 +9,11 @@
                     Clicked="btnTest_Clicked"/>
 
         <ImageButton Source="https://cdn.icon-icons.com/icons2/1197/PNG/512/1490891086-10_82638.png"
-                         Clicked="btnTest_Clicked"/>
+                         Clicked="btnTest_Clicked" Aspect="Center"/>
+        
+        
+        
+        
 
         <RadioButton CheckedChanged="RadioButton_CheckedChanged" 
                      Content="Option 1"

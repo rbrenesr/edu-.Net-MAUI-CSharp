@@ -9,7 +9,7 @@ public partial class CommandsControlsDemo : ContentPage
 
      private void btnTest_Clicked(object sender, EventArgs e)
      {
-		  DisplayAlert("Test", "This is a demo", "Ok");
+		  DisplayAlert("Test", "Evento del botón", "Ok");
      }
 
      private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)

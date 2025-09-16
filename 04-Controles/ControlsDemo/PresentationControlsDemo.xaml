@@ -70,7 +70,7 @@
                     Padding="16,8"
                     HorizontalOptions="Center">
                 <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="40,0,0,40" />
+                    <RoundRectangle CornerRadius="10,0,0,40" />
                 </Border.StrokeShape>
                 <Label Text="Welcome to .NET MAUI!"
                        VerticalOptions="Center"

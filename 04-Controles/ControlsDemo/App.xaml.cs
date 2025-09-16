@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new TextControlsDemo();
+            MainPage = new CollectionsControlsDemo();
         }
     }
 }
