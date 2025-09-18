@@ -468,6 +468,81 @@ El objetivo de este modelo de trabajo es sepaerar de forma ordenada el código e
 
 
 
+
+## Converter
+Con esta opción que cuenta MAUI, es posible enlazar mediante Binding propiedades que, tiene cierta semática para el ser humano, pero que a nivel de tipo de dato son distintas. Por ejemplo, un tipo de datos IsMale = "Yes", en este caso, lo más probable es que queramos reprresentarlo a nivel de UI en un CheckBox, pero el atributo IsChecked es true or false
+
+```
+IsMale = "Yes"  
+
+->
+
+<CheckBox IsChecked="{Binding Data.Merried, Converter={StaticResource boolConverter}}"></CheckBox>
+```
+
+Para estos casos es que usamos la clase Converter, la cual extiende de IValueConverter
+
+```
+    public class BoolConverter : IValueConverter
+    {
+        public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+        {
+            var answer = value as string;
+            if (answer == "Yes")
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+        {
+            var boolena = (bool)value;
+            if (boolena)
+            {
+                return "Yes";
+            }
+            return "No";
+        }
+    }
+
+
+
+
+    ->
+
+
+    <?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMDemo.MVVM.Views.ConvertersView"
+             Title="ConvertersView"
+             xmlns:converters="clr-namespace:MVVMDemo.MVVM.Converters">
+
+    <ContentPage.Resources>
+        <converters:BoolConverter x:Key="boolConverter" />
+    </ContentPage.Resources>
+    
+    
+    <HorizontalStackLayout  VerticalOptions="Center"
+                            HorizontalOptions="Center">
+        <CheckBox IsChecked="{Binding Data.Merried, Converter={StaticResource boolConverter}}"></CheckBox>
+        <Label Text="Merried?" />
+    </HorizontalStackLayout>
+</ContentPage>
+```
+
+
+
+
+
+
+
+
+
+
+
 # Sesión 16 Estilos en .NET MAUI
 
 ## Estilos Implícitos

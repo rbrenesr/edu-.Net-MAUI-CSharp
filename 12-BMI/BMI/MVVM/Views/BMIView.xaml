@@ -16,7 +16,7 @@
         </ScrollView.Background>
 
         <VerticalStackLayout
-            Padding="30,0"
+            Padding="10,0"
             Spacing="25"
             VerticalOptions="Center">
 
@@ -99,7 +99,9 @@
                     <Label
                         FontSize="Title"
                         HorizontalOptions="Center"
-                        Text="{Binding BMI.ResultText}" />
+                        Text="{Binding BMI.ResultText}"
+                        TextColor="Black"
+                        FontSize="Medium"/>
                     <gauge:SfRadialGauge Margin="0,0,0,-55">
                         <gauge:SfRadialGauge.Axes>
                             <gauge:RadialAxis

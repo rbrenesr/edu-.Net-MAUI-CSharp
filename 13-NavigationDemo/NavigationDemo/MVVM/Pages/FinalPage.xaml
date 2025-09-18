@@ -6,7 +6,7 @@
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
         <Button Text="Go to page 2" Clicked="Button_Clicked"></Button>
-        <Button Text="Go to Root Page" Clicked="Button_Clicked_1"></Button>
+        <Button Text="Go to Root Page Insert" Clicked="Button_Clicked_1"></Button>
         
     </StackLayout>
 </ContentPage>

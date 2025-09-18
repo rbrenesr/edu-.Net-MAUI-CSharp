@@ -12,11 +12,11 @@
     <Grid Margin="15"
           RowDefinitions=".1*,.3*,.7*">
         <Label StyleClass="DarkBlue, Header"
-               Text="My Tasks" />
+               Text="Tareas" />
         <Grid Grid.Row="1"
               RowDefinitions=".2*, .8*">
             <Label StyleClass="LightBlue, SubHeader"
-                   Text="CATEGORIES" />
+                   Text="CATEGORIAS" />
             <CollectionView Grid.Row="1"
                             ItemsSource="{Binding Categories}">
                 <CollectionView.ItemsLayout>
@@ -32,7 +32,7 @@
                                 <VerticalStackLayout Padding="15"
                                                      Spacing="10">
                                     <Label StyleClass="LightBlue"
-                                           Text="{Binding PendingTasks, StringFormat='{0} Tasks'}" />
+                                           Text="{Binding PendingTasks, StringFormat='{0} Tareas'}" />
                                     <Label StyleClass="DarkBlue,CardTitle"
                                            Text="{Binding CategoryName}" />
                                     <ProgressBar Progress="{Binding Percentage}"
@@ -47,7 +47,7 @@
         <Grid Grid.Row="2"
               RowDefinitions=".2*, .8*">
             <Label StyleClass="LightBlue, SubHeader"
-                   Text="PENDING TASKS"></Label>
+                   Text="TAREAS PENDIENTES"></Label>
 
             <CollectionView Grid.Row="1"
                             ItemsSource="{Binding Tasks}"

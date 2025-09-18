@@ -9,6 +9,8 @@ namespace MVVMDemo
             InitializeComponent();
 
             MainPage = new CommandsView();
+            //MainPage = new PeopleView();
+            //MainPage = new ConvertersView();
         }
     }
 }

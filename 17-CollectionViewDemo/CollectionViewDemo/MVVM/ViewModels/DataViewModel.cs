@@ -13,9 +13,10 @@ namespace CollectionViewDemo.MVVM.ViewModels
     [AddINotifyPropertyChangedInterface]
     public class DataViewModel
     {
-        private Product selectedProduct;        
+        private Product selectedProduct;
 
-
+        private List<object> selectedProducts;
+  
 
         public ObservableCollection<Product> Products { get; set; } = new ObservableCollection<Product>();
         public bool IsRefreshing { get; set; }
@@ -26,15 +27,14 @@ namespace CollectionViewDemo.MVVM.ViewModels
                 selectedProduct = value;
             }
         }
-        public List<Object> SelectectProducts { get; set; } = new List<object>();
-
+        public List<object> SelectectProducts { get; set; } = new List<object>();
 
 
 
         public ICommand RefreshCommand => new Command(async () =>
         {
             IsRefreshing = true;
-            await Task.Delay(1000);
+            await Task.Delay(3000);
             RefreshItems();
             IsRefreshing = false;
         });
@@ -64,10 +64,10 @@ namespace CollectionViewDemo.MVVM.ViewModels
         public DataViewModel()
         {
             RefreshItems();
-            SelectectProducts.Add(Products.Skip(3).FirstOrDefault());
-            SelectectProducts.Add(Products.Skip(7).FirstOrDefault());
+            SelectectProducts.Add(Products.Skip(3).FirstOrDefault()!);
+            SelectectProducts.Add(Products.Skip(7).FirstOrDefault()!);
 
-            selectedProduct = Products.Skip(2).FirstOrDefault();
+            selectedProduct = Products.Skip(2).FirstOrDefault()!;
         }
 
 

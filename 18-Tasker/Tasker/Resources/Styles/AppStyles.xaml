@@ -39,7 +39,7 @@
     <Style Class="CardTitle"
            TargetType="Label">
         <Setter Property="FontSize"
-                Value="Medium" />
+                Value="Small" />
         <Setter Property="FontAttributes"
                 Value="Bold" />
     </Style>
@@ -47,7 +47,7 @@
     <Shadow x:Key="shadow"
             Brush="#CFD0D4"
             Opacity="0.6"
-            Radius="15">
+            Radius="25">
         <Shadow.Offset>
             <Point X="10"
                    Y="15" />
@@ -75,7 +75,6 @@
                 Value="Large" />
         <Setter Property="HorizontalTextAlignment"
                 Value="Center" />
-
         <Setter Property="PlaceholderColor"
                 Value="{StaticResource LightBlue}" />
         <Setter Property="VerticalOptions"

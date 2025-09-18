@@ -1,4 +1,3 @@
-using MVVMDemo.MVVM.Models;
 using MVVMDemo.MVVM.ViewModels;
 
 namespace MVVMDemo.MVVM.Views;

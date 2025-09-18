@@ -27,7 +27,8 @@
                         TextColor="{StaticResource TextColor}"
                         ItemsSource="{Binding FromMeasures}"
                         SelectedItem="{Binding CurrentFromMeasure}"
-                        SelectedIndexChanged="Picker_SelectedIndexChanged"></Picker>
+                        SelectedIndexChanged="Picker_SelectedIndexChanged"
+                        FontSize="Large"></Picker>
             </VerticalStackLayout>
         </Grid>
 
@@ -44,7 +45,7 @@
                         TextColor="{StaticResource TextColor}"
                         ItemsSource="{Binding ToMeasures}"
                         SelectedItem="{Binding CurrentToMeasure}"
-                        SelectedIndexChanged="Picker_SelectedIndexChanged"></Picker>
+                        SelectedIndexChanged="Picker_SelectedIndexChanged" FontSize="Large"></Picker>
             </VerticalStackLayout>
 
         </Grid>

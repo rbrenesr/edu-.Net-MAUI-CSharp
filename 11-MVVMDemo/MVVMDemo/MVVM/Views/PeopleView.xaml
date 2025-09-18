@@ -4,29 +4,36 @@
              x:Class="MVVMDemo.MVVM.Views.PeopleView"
              Title="PeopleView">
 
-    <ScrollView VerticalScrollBarVisibility="Always">
+    <!--<ScrollView VerticalScrollBarVisibility="Always">-->
 
 
-        <CollectionView SelectionMode="Multiple"
-                        ItemsSource="{Binding People}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Frame Margin="20"
-                               BorderColor="DarkGray"
-                               CornerRadius="5"
-                               HasShadow="True"
-                               VerticalOptions="CenterAndExpand">
+    <CollectionView SelectionMode="Multiple"
+                    ItemsSource="{Binding People}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <Frame BackgroundColor="Black"
+                           Margin="20"
+                           BorderColor="DarkGray"
+                           CornerRadius="5"
+                           HasShadow="True"
+                           VerticalOptions="CenterAndExpand">
 
-
+                        <HorizontalStackLayout Spacing="10">
                             <Label Text="{Binding Name}"
                                    HorizontalOptions="Center" />
-                        </Frame>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
 
-    </ScrollView>
+                            <Label Text="{Binding Age}"
+                                   HorizontalOptions="Center" />
+                        </HorizontalStackLayout>
+
+                    </Frame>
+
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+    <!--</ScrollView>-->
 
 </ContentPage>

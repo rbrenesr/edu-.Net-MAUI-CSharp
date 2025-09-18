@@ -36,29 +36,32 @@
                         Grid.Row="1">-->
 
             <CollectionView.Header>
-                <Frame BackgroundColor="{StaticResource Primary}">
+                <Frame BackgroundColor="{StaticResource PrimaryDark}">
                     <Label Text="Productos"
                            FontAttributes="Bold"
                            TextColor="White"></Label>
                 </Frame>
             </CollectionView.Header>
+            
             <CollectionView.Footer>
                 <HorizontalStackLayout>
                     <Label FontSize="Title">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Power by:"
-                                      TextColor="{StaticResource Tertiary}"></Span>
+                                      TextColor="{StaticResource Gray100}"></Span>
                                 <Span Text="MAUI:"
-                                      TextColor="{StaticResource Tertiary}"></Span>
+                                      TextColor="{StaticResource Gray100}"></Span>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
                 </HorizontalStackLayout>
             </CollectionView.Footer>
+            
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"></LinearItemsLayout>
             </CollectionView.ItemsLayout>
+            
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <!--<Frame Margin="15">-->
@@ -68,7 +71,7 @@
                         <VerticalStackLayout>
                             <Image Source="{Binding Image}"></Image>
                             <Label HorizontalTextAlignment="Center"
-                                   Text="{Binding Name}"></Label>
+                                   Text="{Binding Name}" TextColor="Black"></Label>
                         </VerticalStackLayout>
                     </Frame>
                 </DataTemplate>

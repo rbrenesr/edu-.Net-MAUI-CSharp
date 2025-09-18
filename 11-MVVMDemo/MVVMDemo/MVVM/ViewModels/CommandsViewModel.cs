@@ -1,5 +1,4 @@
-﻿using Android.App;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,17 +9,34 @@ namespace MVVMDemo.MVVM.ViewModels
 {
     public class CommandsViewModel
     {
-        //public ICommand ClickCommand { get; }
-        public ICommand ClickCommand => new Command(Alert);
+        //Forma 1 para crear un comando
+        //public ICommand ClickCommand => new Command( ()=> App.Current.MainPage.DisplayAlert("Tittle","Message","Ok"));
+
+        //Formna 2 de crear un commando
+        //public ICommand ClickCommand => new Command(Alert);
+
+        //Forma 3 de crear un comando
+        public ICommand ClickCommand { get;  }
+
+
+
+
+
         public ICommand SearchCommand { get; }
+
+        public ICommand SearchCommand2 { get; }
         public string SearchTerm { get; set; }
+
+
+
+
 
         public CommandsViewModel()
         {
-        //    ClickCommand = new Command(() =>
-        //    {
-        //        App.Current.MainPage.DisplayAlert("Alert", "You clicked me", "OK");
-        //    });
+            ClickCommand = new Command(() =>
+            {
+                App.Current.MainPage.DisplayAlert("Alert", "You clicked me", "OK");
+            });
 
 
             SearchCommand = new Command(() =>
@@ -29,14 +45,15 @@ namespace MVVMDemo.MVVM.ViewModels
             });
 
 
+            SearchCommand2 = new Command((s) =>
+            {
+                App.Current.MainPage.DisplayAlert("Search", $"You searched for {s}", "OK");
+            });
+
         }
 
 
-        //Forma I de crear commands
-        //public ICommand ClickCommand => new Command(() =>
-        //{
-        //    App.Current.MainPage.DisplayAlert("Alert", "You clicked me", "OK");
-        //});
+
 
 
 

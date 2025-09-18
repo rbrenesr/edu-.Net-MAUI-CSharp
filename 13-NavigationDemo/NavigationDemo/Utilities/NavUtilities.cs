@@ -10,8 +10,9 @@ namespace NavigationDemo.Utilities
 {
     public static class NavUtilities
     {
-        public static void Examine(INavigation navigation) { 
-        StringBuilder sb = new StringBuilder();
+        public static void Examine(INavigation navigation)
+        {
+            StringBuilder sb = new StringBuilder();
 
             foreach (var page in navigation.NavigationStack)
             {
@@ -25,7 +26,7 @@ namespace NavigationDemo.Utilities
 
         public static void InsertPage(INavigation navigation)
         {
-            var secondPage = navigation .NavigationStack.ElementAtOrDefault(1);
+            var secondPage = navigation.NavigationStack.ElementAtOrDefault(1);
 
             if (secondPage != null)
             {

@@ -3,18 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVMDemo.MVVM.Views.PersonView"
              Title="PersonView">
+
     <VerticalStackLayout VerticalOptions="Center"
                          HorizontalOptions="Center">
-        <Label Text="{Binding Person.Name}"  FontSize="50"/>
+        <Label Text="{Binding Person.Name}"
+               FontSize="50" />
 
-        <Slider Maximum="100" Minimum="0" Value="{Binding Person.Age}"></Slider>
+        <Slider Maximum="110"
+                Minimum="0"
+                Value="{Binding Person.Age}"></Slider>
 
-        <Switch IsToggled="{Binding Person.Married}"></Switch>
+
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="IsMarried:"
+                   VerticalOptions="Center" />
+            <Switch IsToggled="{Binding Person.Married}"
+                    VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+
+        <Grid ColumnDefinitions="Auto,Auto"
+              VerticalOptions="Center">
+            <Label Text="IsMarried:"
+                   Grid.Column="0"
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center" />
+            <Switch IsToggled="{Binding Person.Married}"
+                    Grid.Column="1"
+                    VerticalOptions="Center" />
+        </Grid>
+
+
 
         <DatePicker Date="{Binding Person.BirthDate}"></DatePicker>
 
         <Entry Text="{Binding Person.Weight}"></Entry>
+
         <TimePicker Time="{Binding Person.LunchTime}"></TimePicker>
-        
+
     </VerticalStackLayout>
+
 </ContentPage>

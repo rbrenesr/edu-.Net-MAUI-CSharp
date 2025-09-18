@@ -3,12 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hangman.MainPage">
 
+    <VerticalStackLayout>
+        
+    </VerticalStackLayout>
+    
     <Grid RowDefinitions=".6*,.4*">
         <VerticalStackLayout Spacing="10">
 
             <Label FontAttributes="Bold"
                    HorizontalOptions="Center"
-                   Text="{Binding GameStatus}"></Label>
+                   Text=""></Label>
+            
+            
+
+            <Label FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Text="{Binding GameStatus}"
+                   FontSize="Medium"></Label>
+            
             <Image Source="{Binding CurrentImage}"
                    HorizontalOptions="Center" HeightRequest="200"></Image>
 
@@ -46,6 +58,7 @@
                     <Button WidthRequest="50"
                             HeightRequest="50"                            
                             Text="{Binding .}"
+                            Margin="5,5,5,15"
                             Clicked="Button_Clicked"></Button>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>

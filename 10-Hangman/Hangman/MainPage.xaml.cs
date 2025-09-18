@@ -37,8 +37,7 @@ namespace Hangman
                 gameStatus = value;
                 OnPropertyChanged();
             }
-        }
-
+        }    
         public string CurrentImage
         {
             get => currentImage; set
@@ -62,6 +61,7 @@ namespace Hangman
         private int maxWrong = 6;
         private string gameStatus;
         private string currentImage = "img0.jpg";
+        private string datos1;
 
 
         #endregion

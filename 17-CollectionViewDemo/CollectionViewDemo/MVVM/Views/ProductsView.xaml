@@ -28,10 +28,12 @@
                     <Frame BackgroundColor="white"
                            CornerRadius="15">
                         <VerticalStackLayout>
-                            <Image Source="{Binding Image}"></Image>
-                            <Label Text="{Binding Id}"></Label>
-                            <Label Text="{Binding Name}"></Label>
-                            <Label Text="{Binding Price}"></Label>
+                            <Image Source="{Binding Image}" WidthRequest="100"></Image>
+                            <Label Text="{Binding Id}" TextColor="Black"></Label>
+                            <Label Text="{Binding Name}"
+                                   TextColor="Black"></Label>
+                            <Label Text="{Binding Price}"
+                                   TextColor="Black"></Label>
                         </VerticalStackLayout>
                     </Frame>
                 </DataTemplate>

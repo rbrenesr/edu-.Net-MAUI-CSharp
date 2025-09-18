@@ -13,35 +13,43 @@ namespace UnitConverter.MVVM.ViewModels
     [AddINotifyPropertyChangedInterface]
     public class ConverterViewModel
     {
-        public string QuantityName { get; set; }
 
         public ObservableCollection<string> FromMeasures { get; set; }
         public ObservableCollection<string> ToMeasures { get; set; }
+        public string QuantityName { get; set; }
 
         public string CurrentFromMeasure { get; set; }
         public string CurrentToMeasure { get; set; }
-
         public double FromValue { get; set; } = 1;
         public double ToValue { get; set; }
 
         public ICommand ReturnCommand => new Command(() => { Convert(); });
 
+
+
         public ConverterViewModel(string quantityName)
         {
-            //QuantityName = "Length";
+
             QuantityName = quantityName;
             FromMeasures = LoadMeasures();
             ToMeasures = LoadMeasures();
-            
-            /*CurrentFromMeasure = "Meter";
-            CurrentToMeasure = "Centimeter";*/
-
-            CurrentFromMeasure = FromMeasures.FirstOrDefault();
-            CurrentToMeasure = ToMeasures.Skip(1).FirstOrDefault();
+      
+            CurrentFromMeasure = FromMeasures.FirstOrDefault()!;
+            CurrentToMeasure = ToMeasures.Skip(1).FirstOrDefault()!;
 
             Convert();
         }
+        public ObservableCollection<string> LoadMeasures()
+        {
+            var types = Quantity.Infos
+                                      .FirstOrDefault(q => q.Name == QuantityName)?
+                                      .UnitInfos
+                                      .Select(u => u.Name)
+                                      .ToList() ?? new List<string>();
 
+            return new ObservableCollection<string>(types);
+
+        }
         public void Convert()
         {
             var result =
@@ -52,18 +60,5 @@ namespace UnitConverter.MVVM.ViewModels
                     CurrentToMeasure);
             ToValue = result;
         }
-
-        public ObservableCollection<string> LoadMeasures()
-        {
-            var types =
-                Quantity.Infos
-                .FirstOrDefault(q => q.Name == QuantityName)
-                .UnitInfos
-                .Select(u => u.Name)
-                .ToList();
-
-            return new ObservableCollection<string>(types);
-        }
-
     }
 }

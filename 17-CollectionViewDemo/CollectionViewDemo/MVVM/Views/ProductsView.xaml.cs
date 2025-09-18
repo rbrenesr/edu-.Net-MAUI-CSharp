@@ -26,13 +26,24 @@ public partial class ProductsView : ContentPage
         //CollectionView.ScrollTo(10);
         //CollectionView.ScrollTo(10, groupIndex:3);
 
-        var vm = BindingContext as ProductsViewModel;
+        var vm =
+               BindingContext as ProductsViewModel;
 
-        vm.Products.Add(new Models.ProductsGroup ( "New Group",
-            new List<Models.Product> {
-                new Models.Product { Id = 100, Name = "Product 100", Price = 100 } } ));
+        vm.Products.Add(new Models.ProductsGroup("New Group",
+             new List<Models.Product>
+             {
+                    new Models.Product
+                    {
+                         Id = 100,
+                         Name = "Bitcoint",
+                         Price = 999999
+                    }
+             }));
 
-        var product = vm.Products.SelectMany(p => p).FirstOrDefault(x => x.Id == 10);
+        var product =
+             vm.Products
+             .SelectMany(p => p)
+             .FirstOrDefault(x => x.Id == 10);
 
         //CollectionView.ScrollTo(product, animate: false, position: ScrollToPosition.Center);
 

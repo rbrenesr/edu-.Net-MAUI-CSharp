@@ -3,6 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StylesDemo.MainPage">
 
+
+    <!--Estilos implícios, se aplican a todos los elementos de tipo de la página-->
+    <ContentPage.Resources>
+        <Color x:Key="bgColor">#db3a34</Color>
+        <Color x:Key="textColor">#ffc857</Color>
+        
+        <Style TargetType="VerticalStackLayout">
+            <Setter Property="VerticalOptions"
+                    Value="Center"></Setter>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource bgColor}"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="Large"></Setter>
+            <Setter Property="TextColor" Value="{StaticResource textColor}"></Setter>
+        </Style>
+    </ContentPage.Resources>
+    
+    
+
     <ScrollView>
         <VerticalStackLayout>
             <Button Text="LOGIN"></Button>
