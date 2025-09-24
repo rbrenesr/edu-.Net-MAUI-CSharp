@@ -9,9 +9,9 @@ namespace Weather.Converters
 {
     public class CodeToWeatherConverter : IValueConverter
     {
-        public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+          public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var code = (int)value;
+               var code = (float)value;
 
             switch (code)
             {
@@ -101,7 +101,7 @@ namespace Weather.Converters
 
         }
 
-        public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+          public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }

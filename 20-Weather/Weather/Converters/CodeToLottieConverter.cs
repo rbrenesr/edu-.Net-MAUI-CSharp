@@ -10,9 +10,9 @@ namespace Weather.Converters
 {
     public class CodeToLottieConverter : IValueConverter
     {
-        public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+          public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var code = (int)value;
+               var code = (float)value;
             var lottienImageSource = new SKFileLottieImageSource();
 
             switch (code)
@@ -130,7 +130,7 @@ namespace Weather.Converters
 
         }
 
-        public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+          public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }

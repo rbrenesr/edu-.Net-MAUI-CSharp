@@ -6,7 +6,7 @@ public partial class WeatherView : ContentPage
 {
 	public WeatherView()
 	{
-		InitializeComponent();
+        InitializeComponent();
 		BindingContext = new WeatherViewModel();
 	}
 }

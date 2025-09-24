@@ -13,7 +13,7 @@ namespace RestDemo.MVVM.ViewModels
     {
         HttpClient client;
         JsonSerializerOptions serializarOptions;
-        private string baseUri = "https://6669e7392e964a6dfed710c3.mockapi.io";
+        private string baseUri = "https://666b5ae87013419182d31ef5.mockapi.io";
         private List<User> Users;
 
         public MainViewModel()
@@ -28,7 +28,7 @@ namespace RestDemo.MVVM.ViewModels
 
         public ICommand GetAllUsersCommand => new Command(async () =>
         {
-            var url = $"{baseUri}/users";
+            var url = $"{baseUri}/Users";
 
             //var response = await client.GetStringAsync(url);
             var response = await client.GetAsync(url);
@@ -62,7 +62,7 @@ namespace RestDemo.MVVM.ViewModels
 
         public ICommand GetSingleUserCommand => new Command(async () =>
         {
-            var url = $"{baseUri}/users/19";
+            var url = $"{baseUri}/Users/19";
 
             //var response = await client.GetStringAsync(url);
             var response = await client.GetAsync(url);
@@ -92,7 +92,7 @@ namespace RestDemo.MVVM.ViewModels
 
         public ICommand AddUserCommand => new Command(async () =>
         {
-            var url = $"{baseUri}/users";
+            var url = $"{baseUri}/Users";
 
             var user = new User
             {
@@ -126,7 +126,7 @@ namespace RestDemo.MVVM.ViewModels
         {
             var user = Users.FirstOrDefault(x => x.id == "3");
             user.name = "Pedro Pedro Pedro Pedro pe";
-            var url = $"{baseUri}/users/{user.id}";
+            var url = $"{baseUri}/Users/{user.id}";
 
             var userJson = JsonSerializer.Serialize<User>(user, serializarOptions);
             StringContent content = new StringContent(userJson, Encoding.UTF8, "application/json");
@@ -150,7 +150,7 @@ namespace RestDemo.MVVM.ViewModels
         public ICommand DeleteUserCommand => new Command(async () =>
         {
             var user = Users.FirstOrDefault(x => x.id == "51");            
-            var url = $"{baseUri}/users/{user.id}";
+            var url = $"{baseUri}/Users/{user.id}";
 
             var userJson = JsonSerializer.Serialize<User>(user, serializarOptions);
             StringContent content = new StringContent(userJson, Encoding.UTF8, "application/json");

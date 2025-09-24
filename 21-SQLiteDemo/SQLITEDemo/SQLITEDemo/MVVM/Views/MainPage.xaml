@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLITEDemo.MVVM.Views.MainPage"
+             Title="MainPage">
+
+    <Grid RowDefinitions=".2*,.8*">
+
+        <VerticalStackLayout Grid.Row="0"
+                             Padding="10"
+                             Spacing="10">
+            <Label Text="SQLite Demo"
+                   FontSize="32"
+                   HorizontalOptions="Center" />
+            <Entry Placeholder="Name"
+                   Text="{Binding CurrentCustomer.Name}" />
+            <Entry Placeholder="Address"
+                   Text="{Binding CurrentCustomer.Address}" />
+            <Button Text="Add or Update"
+                    Command="{Binding AddOrUpdateCommand}" />
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Customers}"></CollectionView>
+
+    </Grid>
+
+</ContentPage>

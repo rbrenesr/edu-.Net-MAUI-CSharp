@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SkiaSharp.Views.Maui.Controls.Hosting;
+using System.Globalization;
 
 namespace Weather
 {
@@ -7,6 +8,11 @@ namespace Weather
     {
         public static MauiApp CreateMauiApp()
         {
+
+            // Configurar cultura global antes de construir la app
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+            CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
+
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
