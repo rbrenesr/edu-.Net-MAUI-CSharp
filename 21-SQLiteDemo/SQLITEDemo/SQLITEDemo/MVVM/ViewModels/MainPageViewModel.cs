@@ -17,31 +17,62 @@ namespace SQLITEDemo.MVVM.ViewModels
         public Customer CurrentCustomer { get; set; }
 
         public ICommand AddOrUpdateCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
 
         public MainPageViewModel()
         {
-            Console.WriteLine($"ENTRO..................................01");
+
+            List<Order> orders = App.OrderRepo.GetItems().ToList();
+
+            Refresh();
             GenerateNewCustomer();
 
-            Console.WriteLine($"ENTRO..................................02");
-
-
-            AddOrUpdateCommand = new Command( () =>
+            AddOrUpdateCommand = new Command(async () =>
             {
-                App.CustomerRepo.AddOrUpdate(CurrentCustomer!);
-                Console.WriteLine($"Customer {CurrentCustomer!.Name} added/updated.");
+                //App.CustomerRepo.SaveItem(CurrentCustomer!);
+                App.CustomerRepo.SaveItemWithChildren(CurrentCustomer!);
+                Console.WriteLine($"................{App.CustomerRepo.StatusMessage}");
                 GenerateNewCustomer();
+                Refresh();
+            });
+
+            DeleteCommand = new Command(() =>
+            {
+                if (CurrentCustomer != null && CurrentCustomer.Id != 0)
+                {
+                    App.CustomerRepo.DeleteItem(CurrentCustomer);
+                    Refresh();
+                }
             });
         }
 
         private void GenerateNewCustomer()
         {
-            
+
             CurrentCustomer = new Faker<Customer>()
-                .RuleFor(c => c.Name, f => f.Person.FullName) 
+                .RuleFor(c => c.Name, f => f.Person.FullName)
                 .RuleFor(c => c.Address, f => f.Person.Address.Street)
                 .Generate();
+
+            CurrentCustomer.Passports = new List<Passport>
+            {
+                new Passport
+                {
+                    ExpirationDate= DateTime.Now.AddDays(30)
+                },
+                new Passport
+                {
+                    ExpirationDate= DateTime.Now.AddDays(15)
+                }
+            };
         }
 
+        private void Refresh()
+        {
+            //Customers = App.CustomerRepo.GetItems();
+            Customers = App.CustomerRepo.GetItemsWithChildrens();
+            //Customers = App.CustomerRepo.GetAll(x=>x.Name.StartsWith("A"));
+            var pass = App.PassportRepo.GetItems();
+        }
     }
 }

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+
+    <Color x:Key="MainColor">#301551</Color>
+    <Color x:Key="SecondaryColor">#9742ff</Color>
+
+    <Style TargetType="Grid">
+        <Setter Property="ColumnSpacing" Value="0" />
+        <Setter Property="RowSpacing" Value="0" />
+    </Style>
+
+    <Style Class="TopRectangle" TargetType="RoundRectangle">
+        <Setter Property="Margin" Value="-5" />
+        <Setter Property="CornerRadius" Value="0,0,25,25" />
+        <Setter Property="Fill" Value="{StaticResource MainColor}" />
+    </Style>
+
+    <Style Class="Header" TargetType="VerticalStackLayout">
+        <Setter Property="Margin" Value="15" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="Regular" />
+    </Style>
+
+    <Style Class="HeaderTitle" TargetType="Label">
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+    </Style>
+    <Style Class="HeaderSubTitle" TargetType="Label">
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+    </Style>
+
+    <Style Class="BalanceGrid" TargetType="Grid">
+        <Setter Property="Margin" Value="15" />
+    </Style>
+
+    <Shadow
+        x:Key="shadow"
+        Brush="{StaticResource SecondaryColor}"
+        Opacity="0.6"
+        Radius="15"
+        Offset="0,15" />
+
+    <Style Class="BalanceRectangle" TargetType="RoundRectangle">
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Fill" Value="{StaticResource White}" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="Shadow" Value="{StaticResource shadow}" />
+    </Style>
+
+    <Style
+        ApplyToDerivedTypes="True"
+        Class="Padding25"
+        TargetType="Layout">
+        <Setter Property="Padding" Value="25" />
+    </Style>
+    <Style
+        ApplyToDerivedTypes="True"
+        Class="MarginT15"
+        TargetType="View">
+        <Setter Property="Margin" Value="0,15,0,0" />
+    </Style>
+
+    <Style Class="FrameBorder" TargetType="Frame">
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="Padding" Value="10,5" />
+        <Setter Property="BorderColor" Value="{StaticResource SecondaryColor}" />
+    </Style>
+
+    <Style
+        ApplyToDerivedTypes="True"
+        Class="Margin15"
+        TargetType="Layout">
+        <Setter Property="Margin" Value="15" />
+    </Style>
+
+    <Style Class="StrongTitle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Strong" />
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="TextColor" Value="{StaticResource Black}" />
+    </Style>
+    <Style Class="StrongMediumTitle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Strong" />
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="{StaticResource Black}" />
+    </Style>
+
+    <Style Class="StrongSubTitle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Strong" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{StaticResource Black}" />
+    </Style>
+
+    <Style Class="SmallFont" TargetType="Label">
+        <Setter Property="FontFamily" Value="Regular" />
+        <Setter Property="FontSize" Value="Small" />
+    </Style>
+
+    <Style Class="ListAmount" TargetType="Label">
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="HorizontalTextAlignment" Value="End" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <EllipseGeometry
+        x:Key="circle"
+        Center="50,50"
+        RadiusX="30"
+        RadiusY="30" />
+
+    <Style Class="CircularButton" TargetType="Button">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="WidthRequest" Value="100" />
+        <Setter Property="Margin" Value="0,0,0,-35" />
+        <Setter Property="VerticalOptions" Value="End" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="BackgroundColor" Value="{StaticResource MainColor}" />
+        <Setter Property="Clip" Value="{StaticResource circle}" />
+    </Style>
+
+    <Style Class="NoDataText" TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{StaticResource Black}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style
+        ApplyToDerivedTypes="True"
+        Class="RedControl"
+        TargetType="View">
+        <Setter Property="BackgroundColor" Value="DarkRed" />
+    </Style>
+
+</ResourceDictionary>

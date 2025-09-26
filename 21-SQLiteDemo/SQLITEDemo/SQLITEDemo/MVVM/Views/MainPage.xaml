@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SQLITEDemo.MVVM.Views.MainPage"
+             xmlns:local="clr-namespace:SQLITEDemo.MVVM.ViewModels"
              Title="MainPage">
 
-    <Grid RowDefinitions=".2*,.8*">
+    <Grid RowDefinitions=".3*,.7*">
 
         <VerticalStackLayout Grid.Row="0"
                              Padding="10"
@@ -17,11 +18,48 @@
             <Entry Placeholder="Address"
                    Text="{Binding CurrentCustomer.Address}" />
             <Button Text="Add or Update"
-                    Command="{Binding AddOrUpdateCommand}" />
+                    Command="{Binding AddOrUpdateCommand}"
+                    HeightRequest="50" />
         </VerticalStackLayout>
 
         <CollectionView Grid.Row="1"
-                        ItemsSource="{Binding Customers}"></CollectionView>
+                        ItemsSource="{Binding Customers}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding CurrentCustomer}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItem Text="Delete"
+                                       BackgroundColor="Purple"
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainPageViewModel}},Path=DeleteCommand}"></SwipeItem>
+
+                        </SwipeView.LeftItems>
+
+
+                        <Grid ColumnDefinitions="*,Auto,Auto"
+                                  RowDefinitions="Auto,Auto">
+                                <Label Text="{Binding Name}"
+                                       FontAttributes="Bold"
+                                       FontSize="18"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="3"
+                                       TextColor="Black" />
+                                <Label Text="{Binding Address}"
+                                       FontSize="14"
+                                       Grid.Row="1"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="3"
+                                       TextColor="Black" />
+                            </Grid>
+               
+                    </SwipeView>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
     </Grid>
 

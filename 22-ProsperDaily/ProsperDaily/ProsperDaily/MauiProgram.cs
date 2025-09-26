@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using SQLITEDemo.MVVM.Models;
-using SQLITEDemo.Repositories;
 
-namespace SQLITEDemo
+namespace ProsperDaily
 {
     public static class MauiProgram
     {
@@ -15,12 +13,11 @@ namespace SQLITEDemo
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Roboto-Black.ttf", "Strong");
+                    fonts.AddFont("LibreFranklin-Regular.ttf", "Regular");
+
                 });
 
-            //builder.Services.AddSingleton<CustomerRepository>();
-            builder.Services.AddSingleton<BaseRepository<Customer>>();
-            builder.Services.AddSingleton<BaseRepository<Order>>();
-            builder.Services.AddSingleton<BaseRepository<Passport>>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
