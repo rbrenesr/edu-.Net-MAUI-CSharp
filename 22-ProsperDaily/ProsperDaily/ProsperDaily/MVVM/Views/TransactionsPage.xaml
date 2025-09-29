@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProsperDaily.MVVM.Views.TransactionsPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="TransactionsPage">
+
+    <Grid RowDefinitions=".15*,.15*,.70*">
+        <RoundRectangle Grid.RowSpan="2"
+                        StyleClass="TopRectangle"></RoundRectangle>
+        <VerticalStackLayout StyleClass="Header">
+            <Label StyleClass="HeaderSubTitle" Text="Add Transaction"></Label>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1" Grid.RowSpan="2" StyleClass="BalanceGrid">
+            <RoundRectangle StyleClass="BalanceRectangle"></RoundRectangle>
+            <VerticalStackLayout Spacing="10" StyleClass="Padding25">
+                <Label Text="Transaction Name"></Label>
+                <!--<Frame StyleClass="FrameBorder">
+                    <Entry Text="Netflix Subscription"></Entry>
+                </Frame>-->
+                <Border StyleClass="FrameBorder">
+                    <Entry Text="{Binding Transaction.Name}"></Entry>
+                </Border>
+
+
+                <Label StyleClass="MarginT15"
+                       Text="Amount"></Label>
+
+                <Border StyleClass="FrameBorder">
+                    <Entry Text="{Binding Transaction.Amount}" Keyboard="Numeric"></Entry>
+                </Border>
+
+
+                <Label StyleClass="MarginT15"
+                       Text="Transaction Date"></Label>
+
+                <Border StyleClass="FrameBorder">
+                    <DatePicker Date="{Binding Transaction.OperationDate}"></DatePicker>
+                </Border>
+
+                <HorizontalStackLayout>
+                    <CheckBox IsChecked="{Binding Transaction.IsIncome}"></CheckBox>
+                    <Label Text="Is Income?"></Label>
+                </HorizontalStackLayout>
+
+                <Button StyleClass="MarginT15" Text="Save" x:Name="Save" Clicked="Save_Clicked"></Button>
+                <Button StyleClass="MarginT15, RedControl" Text="Cancel" x:Name="Cancel" Clicked="Cancel_Clicked"></Button>
+
+            </VerticalStackLayout>
+        </Grid>
+        
+    </Grid>
+    
+</ContentPage>

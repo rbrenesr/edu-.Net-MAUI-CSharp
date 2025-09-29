@@ -72,6 +72,25 @@
         <Setter Property="BorderColor" Value="{StaticResource SecondaryColor}" />
     </Style>
 
+    <Style Class="FrameBorder"
+           TargetType="Border">
+        <Setter Property="HeightRequest"
+                Value="50" />
+        <Setter Property="Padding"
+                Value="10,5" />
+        <Setter Property="Stroke"
+                Value="{StaticResource SecondaryColor}" />
+        <Setter Property="StrokeThickness"
+                Value="2" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="10" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
     <Style
         ApplyToDerivedTypes="True"
         Class="Margin15"

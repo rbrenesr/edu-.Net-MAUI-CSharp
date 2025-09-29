@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProsperDaily.MVVM.Views.DashboardPage"
+             x:Class="ProsperDaily.MVVM.Views.StatisticsPage"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              xmlns:converters="clr-namespace:ProsperDaily.Converters"
-             NavigationPage.HasNavigationBar="False"
-             Title="DashboardPage">
+             Title="StatisticsPage">
+
 
     <ContentPage.Resources>
         <converters:AmountToCurrencyConverter x:Key="AmountConverter" />
@@ -12,18 +13,13 @@
     </ContentPage.Resources>
 
 
-
-
-
-    <Grid RowDefinitions=".15*,.15*,.15*,.55*">
+    <Grid RowDefinitions=".15*,.15*,.30*,.40*">
         <RoundRectangle Grid.RowSpan="2"
                         StyleClass="TopRectangle"></RoundRectangle>
-
         <VerticalStackLayout StyleClass="Header">
-            <Label StyleClass="HeaderTitle"
-                   Text="Good Morning"></Label>
             <Label StyleClass="HeaderSubTitle"
-                   Text="Rafael Brenes"></Label>
+                   Text="Statistics"></Label>
+            
         </VerticalStackLayout>
 
         <Grid Grid.Row="1"
@@ -31,43 +27,31 @@
               StyleClass="BalanceGrid">
             <RoundRectangle StyleClass="BalanceRectangle"></RoundRectangle>
 
-            <Grid ColumnDefinitions="*,*"
-                  RowDefinitions=".333*,.333*"
-                  StyleClass="Padding25">
-                <VerticalStackLayout>
-                    <Label Text="Total Balance"></Label>
-                    <Label StyleClass="StrongTitle"
-                           Text="{Binding Balance, StringFormat='{0:C}'}"></Label>
-                </VerticalStackLayout>
-                <VerticalStackLayout Grid.Row="2">
-                    <Label Text="Income"></Label>
-                    <Label StyleClass="StrongSubTitle"
-                           Text="{Binding Income, StringFormat='{0:C}'}"></Label>
-                </VerticalStackLayout>
-                <VerticalStackLayout Grid.Row="2"
-                                     Grid.Column="1"
-                                     HorizontalOptions="Center">
-                    <Label Text="Expenses"></Label>
-                    <Label StyleClass="StrongSubTitle"
-                           Text="{Binding Expenses, StringFormat='{0:C}'}"></Label>
-                </VerticalStackLayout>
-            </Grid>
+            <chart:SfCartesianChart Margin="5,5,20,5">
+                <chart:SfCartesianChart.XAxes>
+                    <chart:CategoryAxis />
+                </chart:SfCartesianChart.XAxes>
 
+                <chart:SfCartesianChart.YAxes>
+                    <chart:NumericalAxis />
+                </chart:SfCartesianChart.YAxes>
+
+                <chart:SplineSeries ItemsSource="{Binding Summary}"
+                                    XBindingPath="ShownDate"
+                                    YBindingPath="TransactionsTotal"/>
+                
+
+            </chart:SfCartesianChart>
+            
         </Grid>
 
-        <Button Grid.Row="2"
-                StyleClass="CircularButton"
-                Text="+"
-                x:Name="AddTransaction" 
-                Clicked="AddTransaction_Clicked"></Button>
 
-        <Grid Grid.Row="3"
-              RowDefinitions=".1*,.9*"
-              StyleClass="Margin15">
-            <Label Text="Transacction"></Label>
+        <Grid Grid.Row="3" RowDefinitions=".1*,.9*" StyleClass="MarginT15">
+            <Label Text="Top Spending"></Label>
+
             <CollectionView Grid.Row="1"
                             EmptyView="No Data"
-                            ItemsSource="{Binding Transactions}">
+                            ItemsSource="{Binding SpendingList}" Margin="15">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="15"
                                        Orientation="Vertical">
@@ -106,26 +90,27 @@
                                    IsVisible="False"
                                    Text="{Binding IsIncome}">
                             </Label>
-                            
+
                             <Label Grid.RowSpan="2"
                                    Grid.Column="1"
                                    StyleClass="ListAmount"
                                    Text="{Binding Amount, Converter={StaticResource AmountConverter}, ConverterParameter={x:Reference lblIsIncome}}"
-                                   TextColor="{Binding Amount, Converter={StaticResource ColorConverter}, ConverterParameter={x:Reference lblIsIncome}}"
-                                   ></Label>
+                                   TextColor="{Binding Amount, Converter={StaticResource ColorConverter}, ConverterParameter={x:Reference lblIsIncome}}"></Label>
 
 
 
                             <!--Text="{Binding Amount, StringFormat='{0:C}'}">
-                            </Label>-->
+             </Label>-->
 
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </Grid>
 
+        </Grid>
+        
 
     </Grid>
+
 
 </ContentPage>
