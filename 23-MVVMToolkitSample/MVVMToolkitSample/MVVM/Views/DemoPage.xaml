@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MVVMToolkitSample.MVVM.Views.DemoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="DemoPage">
+
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Entry HorizontalOptions="Center" Text="{Binding Person.FirstName}" />
+        <Entry HorizontalOptions="Center" Text="{Binding Person.LastName}" />
+        <Label HorizontalOptions="Center" Text="{Binding Person.FullName}" />
+        <Label HorizontalOptions="Center" Text="{Binding Password}" />
+        <Button
+            Command="{Binding GenerateData}"
+            HorizontalOptions="Center"
+            Text="Generate Fake Data" />
+
+    </VerticalStackLayout>
+</ContentPage>

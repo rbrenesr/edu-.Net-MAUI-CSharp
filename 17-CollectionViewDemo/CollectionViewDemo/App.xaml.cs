@@ -9,9 +9,9 @@ namespace CollectionViewDemo
             InitializeComponent();
 
             //MainPage = new DataView();
-            //MainPage = new LayoutPage();
+            MainPage = new LayoutPage();
             //MainPage = new EmptyView();
-            MainPage = new ProductsView();
+            //MainPage = new ProductsView();
         }
     }
 }
